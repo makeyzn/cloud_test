@@ -9,7 +9,7 @@ import button from "../../components/Button/Button.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addMain } from "../../features/SendDataSlice";
 import MainInfo from "../../components/MainInfo/MainInfo";
-import { Button } from "../../components/Button/Button";
+import Button from "../../components/Button/Button";
 
 export type MainValues = {
   phone: string;

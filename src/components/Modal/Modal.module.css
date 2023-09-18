@@ -47,17 +47,17 @@
   width: 80px;
 }
 
+.mainContent img {
+  height: 40px;
+  z-index: 1001;
+}
+
 .green {
   background-color: rgb(5, 174, 113, 0.15);
 }
 
 .red {
   background-color: rgb(232, 78, 88, 0.15);
-}
-
-.mainContent img {
-  height: 40px;
-  z-index: 1001;
 }
 
 .close {

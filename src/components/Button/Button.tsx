@@ -1,23 +1,11 @@
-import cx from "classnames";
+import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: string;
-  className: string;
-  id?: string;
-  type?: "button" | "submit" | "reset" | undefined;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const Button = ({
-  children,
-  className,
-  id,
-  type,
-  onClick,
-}: ButtonProps) => {
-  return (
-    <button className={cx(className)} id={id} type={type} onClick={onClick}>
-      {children}
-    </button>
-  );
+const Button = ({ children, ...props }: ButtonProps) => {
+  return <button {...props}>{children}</button>;
 };
+
+export default Button;

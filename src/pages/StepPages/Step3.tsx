@@ -11,7 +11,7 @@ import CustomizedSteppers from "../../components/Stepper";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import ModalWindow from "../../components/Modal/ModalWindow";
-import { Button } from "../../components/Button/Button";
+import Button from "../../components/Button/Button";
 import { sendData } from "../../features/SendDataAction";
 
 export type AboutValues = {

@@ -6,7 +6,7 @@ import button from "../Button/Button.module.css";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { useNavigate } from "react-router";
 import { closeModal } from "../../features/SendDataSlice";
-import { Button } from "../Button/Button";
+import Button from "../Button/Button";
 
 const ModalWindow = () => {
   const navigate = useNavigate();

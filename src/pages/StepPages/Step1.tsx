@@ -8,7 +8,7 @@ import * as yup from "yup";
 import { addInfo } from "../../features/SendDataSlice";
 import CustomizedSteppers from "../../components/Stepper";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { Button } from "../../components/Button/Button";
+import Button from "../../components/Button/Button";
 
 export type InfoValues = {
   nickname: string;

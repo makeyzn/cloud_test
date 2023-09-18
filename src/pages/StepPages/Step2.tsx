@@ -8,7 +8,7 @@ import * as yup from "yup";
 import button from "../../components/Button/Button.module.css";
 import CustomizedSteppers from "../../components/Stepper";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { Button } from "../../components/Button/Button";
+import Button from "../../components/Button/Button";
 
 const schema = yup.object().shape({
   advntgs: yup
