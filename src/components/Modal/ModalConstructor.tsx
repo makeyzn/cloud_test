@@ -2,20 +2,29 @@ import ReactDOM from "react-dom";
 import modal from "./Modal.module.css";
 import { useAppSelector } from "../../hooks/hooks";
 
+interface ModalProps {
+  renderHeader?: () => JSX.Element;
+  renderFooter?: () => JSX.Element;
+  renderMainContent?: () => JSX.Element;
+}
+
 const root = document.createElement("div");
+
 root.classList.add("portal");
 root.id = "portal";
 document.body.append(root);
 
-export default function Modal({
+const Modal = ({
   renderHeader,
   renderFooter,
   renderMainContent,
-}: any) {
-  const portal = document.getElementById("portal");
+}: ModalProps) => {
   const isOpen = useAppSelector((state) => state.data.isOpen);
-  console.log(isOpen);
-  if (!isOpen) return null;
+
+  if (!isOpen) {
+    return null;
+  }
+
   return ReactDOM.createPortal(
     <>
       <div className={modal.overlay}></div>
@@ -27,4 +36,6 @@ export default function Modal({
     </>,
     document.getElementById("portal")
   );
-}
+};
+
+export default Modal;
