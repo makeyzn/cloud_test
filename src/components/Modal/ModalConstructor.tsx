@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
-import modal from "../modules/Modal.module.css";
-import { useAppSelector } from "../hooks/hooks";
+import modal from "./Modal.module.css";
+import { useAppSelector } from "../../hooks/hooks";
 
 const root = document.createElement("div");
 root.classList.add("portal");

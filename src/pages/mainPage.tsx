@@ -5,11 +5,11 @@ import InputMask from "react-input-mask";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import style from "../modules/mainPage.module.css";
-import button from "../modules/Button.module.css";
+import button from "../components/Button/Button.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addMain } from "../features/SendDataSlice";
-import MainInfo from "../components/MainInfo";
-import { Button } from "../components/Button";
+import MainInfo from "../components/MainInfo/MainInfo";
+import { Button } from "../components/Button/Button";
 
 export type MainValues = {
   phone: string;
@@ -43,7 +43,6 @@ const mainPage = () => {
 
   return (
     <>
-      {/* Семантика? */}
       <div className={style.container}>
         <MainInfo />
         <form onSubmit={handleSubmit(onSubmit)} className={style.form}>

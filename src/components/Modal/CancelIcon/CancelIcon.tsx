@@ -1,6 +1,5 @@
-import React from "react";
-import cancel from "../../images/circle-xmark-solid.svg";
-import icon from "../../modules/Modal.module.css";
+import cancel from "./circle-xmark-solid.svg";
+import icon from "./Modal.module.css";
 
 const AcceptIcon = () => {
   return (

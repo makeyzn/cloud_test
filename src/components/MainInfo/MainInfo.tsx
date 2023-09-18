@@ -1,5 +1,5 @@
 import FolderIcon from "@mui/icons-material/Folder";
-import style from "../modules/mainPage.module.css";
+import style from "./MainInfo.module.css";
 
 const MainInfo = () => {
   return (

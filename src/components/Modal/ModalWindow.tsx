@@ -1,12 +1,12 @@
-import Modal from "../components/ModalConstructor";
-import modal from "../modules/Modal.module.css";
-import AcceptIcon from "../components/Icons/AcceptIcon";
-import CancelIcon from "../components/Icons/CancelIcon";
-import button from "../modules/Button.module.css";
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import Modal from "./ModalConstructor";
+import modal from "./Modal.module.css";
+import AcceptIcon from "./AcceptIcon/AcceptIcon";
+import CancelIcon from "./CancelIcon/CancelIcon";
+import button from "../Button/Button.module.css";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { useNavigate } from "react-router";
-import { closeModal } from "../features/SendDataSlice";
-import { Button } from "./Button";
+import { closeModal } from "../../features/SendDataSlice";
+import { Button } from "../Button/Button";
 
 const ModalWindow = () => {
   const navigate = useNavigate();

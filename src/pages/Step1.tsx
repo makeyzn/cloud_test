@@ -2,13 +2,13 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import form from "../modules/form.module.css";
-import button from "../modules/Button.module.css";
+import button from "../components/Button/Button.module.css";
 import style from "../modules/FormPage.module.css";
 import * as yup from "yup";
 import { addInfo } from "../features/SendDataSlice";
 import CustomizedSteppers from "../components/Stepper";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
-import { Button } from "../components/Button";
+import { Button } from "../components/Button/Button";
 
 export type InfoValues = {
   nickname: string;

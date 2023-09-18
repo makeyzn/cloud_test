@@ -1,5 +1,5 @@
-import accept from "../../images/circle-check-solid.svg";
-import icon from "../../modules/Modal.module.css";
+import accept from "./circle-check-solid.svg";
+import icon from "./Modal.module.css";
 
 const AcceptIcon = () => {
   return (
