@@ -1,5 +1,11 @@
-import FolderIcon from "@mui/icons-material/Folder";
 import style from "./MainInfo.module.css";
+import SocialLink from "./SocialLink";
+
+const mock = [
+  { link: "https://t.me/makeyzn", name: "Telegram" },
+  { link: "https://github.com/makeyzn", name: "GitHub" },
+  { link: "#", name: "Resume" },
+];
 
 const MainInfo = () => {
   return (
@@ -8,20 +14,9 @@ const MainInfo = () => {
       <div className={style.main__contacts}>
         <h3>Владимир Конаков</h3>
         <ul className={style.main__contacts_links}>
-          {/* Убрать HARDCODE STYLE */}
-          {/* Рассмотреть вариант замены 'li' n 'a' */}
-          <li>
-            <FolderIcon style={{ color: "#CCCCCC", marginRight: "5px" }} />
-            <a href="https://t.me/makeyzn">Telegram</a>
-          </li>
-          <li>
-            <FolderIcon style={{ color: "#CCCCCC", marginRight: "5px" }} />
-            <a href="https://github.com/makeyzn">GitHub</a>
-          </li>
-          <li>
-            <FolderIcon style={{ color: "#CCCCCC", marginRight: "5px" }} />
-            <a href="#">Resume</a>
-          </li>
+          {mock.map((social) => (
+            <SocialLink {...social} key={social.name} />
+          ))}
         </ul>
       </div>
     </div>
