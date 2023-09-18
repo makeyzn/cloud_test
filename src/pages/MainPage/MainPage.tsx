@@ -1,15 +1,15 @@
-import "../App.css";
+import "../../App.css";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import InputMask from "react-input-mask";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import style from "../modules/mainPage.module.css";
-import button from "../components/Button/Button.module.css";
+import style from "./mainPage.module.css";
+import button from "../../components/Button/Button.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addMain } from "../features/SendDataSlice";
-import MainInfo from "../components/MainInfo/MainInfo";
-import { Button } from "../components/Button/Button";
+import { addMain } from "../../features/SendDataSlice";
+import MainInfo from "../../components/MainInfo/MainInfo";
+import { Button } from "../../components/Button/Button";
 
 export type MainValues = {
   phone: string;

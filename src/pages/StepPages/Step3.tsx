@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import form from "../modules/form.module.css";
-import button from "../components/Button/Button.module.css";
-import style from "../modules/FormPage.module.css";
+import form from "./form.module.css";
+import button from "../../components/Button/Button.module.css";
+import style from "./FormPage.module.css";
 import * as yup from "yup";
 import { useNavigate } from "react-router";
-import { addAbout } from "../features/SendDataSlice";
-import CustomizedSteppers from "../components/Stepper";
+import { addAbout } from "../../features/SendDataSlice";
+import CustomizedSteppers from "../../components/Stepper";
 
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
-import ModalWindow from "../components/Modal/ModalWindow";
-import { Button } from "../components/Button/Button";
-import { sendData } from "../features/SendDataAction";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import ModalWindow from "../../components/Modal/ModalWindow";
+import { Button } from "../../components/Button/Button";
+import { sendData } from "../../features/SendDataAction";
 
 export type AboutValues = {
   about: string;

@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { InfoValues } from "../pages/Step1";
-import { FormValues } from "../pages/Step2";
-import { MainValues } from "../pages/MainPage";
-import { AboutValues } from "../pages/Step3";
+import { InfoValues } from "../pages/StepPages/Step1";
+import { FormValues } from "../pages/StepPages/Step2";
+import { MainValues } from "../pages/MainPage/MainPage";
+import { AboutValues } from "../pages/StepPages/Step3";
 import { store } from "../store";
 import { sendData } from "./SendDataAction";
 

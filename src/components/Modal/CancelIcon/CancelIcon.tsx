@@ -1,5 +1,5 @@
 import cancel from "./circle-xmark-solid.svg";
-import icon from "./Modal.module.css";
+import icon from "../Modal.module.css";
 
 const AcceptIcon = () => {
   return (
