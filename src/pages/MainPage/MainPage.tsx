@@ -6,20 +6,20 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import style from "./mainPage.module.css";
 import button from "../../components/Button/Button.module.css";
-import { useDispatch, useSelector } from "react-redux";
 import { addMain } from "../../features/SendDataSlice";
 import MainInfo from "../../components/MainInfo/MainInfo";
 import Button from "../../components/Button/Button";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 
 export type MainValues = {
   phone: string;
   email: string;
 };
 
-const mainPage = () => {
-  const dispatch = useDispatch();
+const MainPage = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const data = useSelector((state) => state.data);
+  const data = useAppSelector((state) => state.data);
 
   const schema = yup.object().shape({
     phone: yup.string().required(),
@@ -54,7 +54,7 @@ const mainPage = () => {
               placeholder="+7 (___) ___-__-__"
               {...register("phone")}
               className={style.form__input}
-            ></InputMask>
+            />
             <p>{errors.phone?.message}</p>
             <p>Email</p>
             <input
@@ -74,4 +74,4 @@ const mainPage = () => {
   );
 };
 
-export default mainPage;
+export default MainPage;

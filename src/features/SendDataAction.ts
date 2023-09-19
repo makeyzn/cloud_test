@@ -6,7 +6,7 @@ export const sendData = createAsyncThunk<unknown, void, { state: RootState }>(
   async function (_, { rejectWithValue, getState }) {
     try {
       const response = await fetch(
-        "https://api.sbercloud.ru/content/v1/bootcamp1/frontend",
+        "https://api.sbercloud.ru/content/v1/bootcamp/frontend",
         {
           method: "POST",
           headers: {
