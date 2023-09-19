@@ -1,11 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-export const sendData = createAsyncThunk(
+export const sendData = createAsyncThunk<unknown, void, { state: RootState }>(
   "data/sendData",
   async function (_, { rejectWithValue, getState }) {
     try {
       const response = await fetch(
-        "https://api.sbercloud.ru/content/v1/bootcamp/frontend",
+        "https://api.sbercloud.ru/content/v1/bootcamp1/frontend",
         {
           method: "POST",
           headers: {
@@ -22,16 +23,14 @@ export const sendData = createAsyncThunk(
             checkboxes: getState().data.checkboxes,
             radio: Number(getState().data.radio),
             about: getState().data.about,
-          }), // отредактировать типы данных
+          }),
         }
       );
-      if (!response.ok) {
-        throw new Error("Can't send data to server");
-      }
       return await response.json();
     } catch (error) {
-      console.log(error);
-      return rejectWithValue(error.message);
+      if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      }
     }
   }
 );
