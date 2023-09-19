@@ -13,19 +13,19 @@ const ModalWindow = () => {
   const status = useAppSelector((state) => state.data.status);
   const dispatch = useAppDispatch();
 
-  function goMain() {
+  const goMain = () => {
     navigate("/");
-  }
+  };
 
-  function closeModalClickHandler() {
+  const closeModalClickHandler = () => {
     dispatch(closeModal());
-  }
+  };
   return (
     <div>
       {status === "fulfilled" && (
         <Modal
           renderHeader={() => <p>Форма успешно отправлена</p>}
-          renderMainContent={() => AcceptIcon()}
+          renderMainContent={() => <AcceptIcon />}
           renderFooter={() => (
             <Button className={button.buttonNext} onClick={goMain}>
               На главную
@@ -44,7 +44,7 @@ const ModalWindow = () => {
               ></Button>
             </div>
           )}
-          renderMainContent={() => CancelIcon()}
+          renderMainContent={() => <CancelIcon />}
           renderFooter={() => (
             <Button
               onClick={closeModalClickHandler}

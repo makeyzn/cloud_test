@@ -8,7 +8,7 @@ interface ModalProps {
   renderMainContent?: () => JSX.Element;
 }
 
-const root = document.createElement("div");
+const root = document.createElement("div") as HTMLElement;
 
 root.classList.add("portal");
 root.id = "portal";
@@ -25,6 +25,8 @@ const Modal = ({
     return null;
   }
 
+  const portalElement = document.getElementById("portal");
+
   return ReactDOM.createPortal(
     <>
       <div className={modal.overlay}></div>
@@ -34,7 +36,7 @@ const Modal = ({
         <footer className={modal.footer}>{renderFooter?.()}</footer>
       </div>
     </>,
-    document.getElementById("portal")
+    portalElement ? portalElement : document.createElement("div")
   );
 };
 
