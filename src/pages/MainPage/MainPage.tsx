@@ -9,12 +9,7 @@ import { addMain } from "../../features/SendDataSlice";
 import MainInfo from "../../components/MainInfo/MainInfo";
 import Button from "../../components/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import schemaMain from './schemaMain'
-
-export type MainValues = {
-  phone: string;
-  email: string;
-};
+import schemaMain, { MainValues } from "./schemaMain";
 
 const MainPage = () => {
   const dispatch = useAppDispatch();

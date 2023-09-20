@@ -5,4 +5,6 @@ const schemaMain = yup.object().shape({
   email: yup.string().email().required(),
 });
 
+export type MainValues = yup.InferType<typeof schemaMain>;
+
 export default schemaMain;

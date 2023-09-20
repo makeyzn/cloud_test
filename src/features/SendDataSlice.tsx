@@ -1,14 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { MainValues } from "../pages/MainPage/MainPage";
 import store from "../store";
 import { sendData } from "./SendDataAction";
 import { InfoValues } from "../pages/StepPages/Step1/schemaStep1";
 import { FormValues } from "../pages/StepPages/Step2/schemaStep2";
 import { AboutValues } from "../pages/StepPages/Step3/schemaStep3";
+import { MainValues } from "../pages/MainPage/schemaMain";
 
-interface DataState extends InfoValues, FormValues, AboutValues {
-  phone: string;
-  email: string;
+interface DataState extends MainValues, InfoValues, FormValues, AboutValues {
   status: string;
   isOpen: boolean;
 }
