@@ -1,17 +1,14 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { FormValues } from "../pages/StepPages/Step2";
 import { MainValues } from "../pages/MainPage/MainPage";
 import { AboutValues } from "../pages/StepPages/Step3";
 import store from "../store";
 import { sendData } from "./SendDataAction";
 import { InfoValues } from "../pages/StepPages/Step1/schemaStep1";
+import { FormValues } from "../pages/StepPages/Step2/schemaStep2";
 
-interface DataState extends InfoValues {
+interface DataState extends InfoValues, FormValues {
   phone: string;
   email: string;
-  advntgs: { advntg: string }[];
-  checkboxes: string[];
-  radio: string;
   about: string;
   status: string;
   isOpen: boolean;
@@ -23,10 +20,10 @@ const initialState: DataState = {
   nickname: "",
   name: "",
   surname: "",
-  sex: 'man',
+  sex: "man",
   advntgs: [{ advntg: "" }, { advntg: "" }, { advntg: "" }],
   checkboxes: [],
-  radio: "",
+  radio: 0,
   about: "",
   status: "",
   isOpen: false,
