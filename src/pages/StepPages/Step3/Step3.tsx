@@ -1,59 +1,47 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import form from "./form.module.css";
-import button from "../../components/Button/Button.module.css";
-import style from "./FormPage.module.css";
-import * as yup from "yup";
+import form from "../form.module.css";
+import button from "../../../components/Button/Button.module.css";
+import style from "../FormPage.module.css";
 import { useNavigate } from "react-router";
-import { addAbout } from "../../features/SendDataSlice";
-import CustomizedSteppers from "../../components/Stepper";
+import { addAbout } from "../../../features/SendDataSlice";
+import CustomizedSteppers from "../../../components/Stepper";
 
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import ModalWindow from "../../components/Modal/ModalWindow";
-import Button from "../../components/Button/Button";
-import { sendData } from "../../features/SendDataAction";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import ModalWindow from "../../../components/Modal/ModalWindow";
+import Button from "../../../components/Button/Button";
+import { sendData } from "../../../features/SendDataAction";
+import schemaStep3, { AboutValues } from "./schemaStep3";
 
-export type AboutValues = {
-  about: string;
-};
-
-const Step1 = () => {
+const Step3 = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const data = useAppSelector((state) => state.data);
 
   const [symbols, setSymbols] = useState("");
 
-  const schema = yup.object().shape({
-    about: yup
-      .string()
-      .max(200)
-      .matches(/^[a-zA-Z0-9]+$/, "Only letters and numbers are allowed")
-      .required(),
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schemaStep3),
     defaultValues: data,
   });
 
-  function goBack() {
+  const goBack = () => {
     navigate("/create/step2");
-  }
+  };
 
   const onSubmit = (data: AboutValues) => {
     dispatch(addAbout(data));
   };
 
-  function symbolCounter(e: any) {
+  const symbolCounter = (e: any) => {
     const newSymbols = e.target.value;
     setSymbols(newSymbols);
-  }
+  };
 
   return (
     <>
@@ -97,4 +85,4 @@ const Step1 = () => {
   );
 };
 
-export default Step1;
+export default Step3;

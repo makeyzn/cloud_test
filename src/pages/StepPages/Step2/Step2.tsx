@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import Button from "../../../components/Button/Button";
 import schemaStep2, { FormValues } from "./schemaStep2";
 
-const Step1 = () => {
+const Step2 = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const data = useAppSelector((state) => state.data);
@@ -164,4 +164,4 @@ const Step1 = () => {
   );
 };
 
-export default Step1;
+export default Step2;
