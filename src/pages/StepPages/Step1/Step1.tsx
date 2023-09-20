@@ -4,48 +4,23 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import form from "./form.module.css";
 import button from "../../components/Button/Button.module.css";
 import style from "./FormPage.module.css";
-import * as yup from "yup";
-import { addInfo } from "../../features/SendDataSlice";
-import CustomizedSteppers from "../../components/Stepper";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import Button from "../../components/Button/Button";
-
-export type InfoValues = {
-  nickname: string;
-  name: string;
-  surname: string;
-  sex: string;
-};
+import { addInfo } from "../../../features/SendDataSlice";
+import CustomizedSteppers from "../../../components/Stepper";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import Button from "../../../components/Button/Button";
+import schemaStep1, { InfoValues } from "./schemaStep1";
 
 const Step1 = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const data = useAppSelector((state) => state.data);
-  const schema = yup.object().shape({
-    nickname: yup
-      .string()
-      .max(30)
-      .matches(/^[a-zA-Z0-9]+$/, "Only letters and numbers are allowed")
-      .required(),
-    name: yup
-      .string()
-      .max(50)
-      .matches(/^[a-zA-Z]+$/, "Only alphabetic characters are allowed")
-      .required(),
-    surname: yup
-      .string()
-      .max(50)
-      .matches(/^[a-zA-Z]+$/, "Only alphabetic characters are allowed")
-      .required(),
-    sex: yup.string().oneOf(["man", "woman"]).required(),
-  });
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schemaStep1),
     defaultValues: data,
   });
 
@@ -89,7 +64,6 @@ const Step1 = () => {
             />
             <p>{errors.surname?.message}</p>
             <p>Sex</p>
-            {/* Стилизовать option */}
             <select {...register("sex")} className={form.input}>
               <option value="" disabled selected hidden>
                 Не выбрано
