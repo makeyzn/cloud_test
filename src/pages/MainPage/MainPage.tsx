@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import InputMask from "react-input-mask";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import style from "./mainPage.module.css";
 import button from "../../components/Button/Button.module.css";
 import { addMain } from "../../features/SendDataSlice";
 import MainInfo from "../../components/MainInfo/MainInfo";
 import Button from "../../components/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import schemaMain from './schemaMain'
 
 export type MainValues = {
   phone: string;
@@ -21,22 +21,16 @@ const MainPage = () => {
   const navigate = useNavigate();
   const data = useAppSelector((state) => state.data);
 
-  const schema = yup.object().shape({
-    phone: yup.string().required(),
-    email: yup.string().email().required(),
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schemaMain),
     defaultValues: data,
   });
 
   const onSubmit = (data: MainValues) => {
-    console.log(data);
     dispatch(addMain(data));
     navigate("/create/step1");
   };
