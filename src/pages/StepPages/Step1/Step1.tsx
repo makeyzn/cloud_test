@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
-import form from "../form.module.css";
+import form from "../Form.module.css";
 import button from "../../../components/Button/Button.module.css";
 import style from "../FormPage.module.css";
 import { addInfo } from "../../../features/SendDataSlice";
@@ -26,7 +26,7 @@ const Step1 = () => {
 
   const goBack = () => {
     navigate("/");
-  }
+  };
 
   const onSubmit = (data: InfoValues) => {
     dispatch(addInfo(data));

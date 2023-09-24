@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import form from "../form.module.css";
+import form from "../Form.module.css";
 import button from "../../../components/Button/Button.module.css";
 import style from "../FormPage.module.css";
 import { useNavigate } from "react-router";
